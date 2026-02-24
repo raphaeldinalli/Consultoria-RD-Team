@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphael Dinalli | Treinador</title>
+    <style>
+        :root { --vermelho: #e31b23; --preto: #0a0a0a; }
+        body { font-family: sans-serif; background-color: var(--preto); color: white; margin: 0; text-align: center; }
+        .header { padding: 50px 20px; }
+        .logo { max-width: 150px; margin-bottom: 15px; }
+        .planos-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px; }
+        .card { background: white; color: #1a1a1a; border-radius: 12px; width: 280px; padding: 25px; text-align: left; }
+        .tag { background: var(--vermelho); color: white; font-size: 0.7rem; font-weight: bold; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
+        .preco { color: var(--vermelho); font-size: 2rem; font-weight: bold; margin: 15px 0; }
+        ul { list-style: none; padding: 0; margin-bottom: 25px; min-height: 120px; }
+        ul li { margin-bottom: 10px; font-size: 0.9rem; }
+        ul li::before { content: "✓ "; color: var(--vermelho); font-weight: bold; }
+        .btn { background: var(--vermelho); color: white; text-decoration: none; display: block; text-align: center; padding: 15px; border-radius: 6px; font-weight: bold; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>RAPHAEL DINALLI</h1>
+        <p style="color: var(--vermelho)">TREINADOR ONLINE</p>
+    </div>
+    <div class="planos-wrapper">
+        <div class="card">
+            <div class="tag">MENSAL</div>
+            <h2>PLANO MENSAL</h2>
+            <div class="preco">R$290</div>
+            <ul>
+                <li>Treino e Dieta</li>
+                <li>Suporte WhatsApp</li>
+            </ul>
+            <a href="https://wa.me/55SEUNUMERO" class="btn">Contratar</a>
+        </div>
+        <div class="card">
+            <div class="tag">MAIS VENDIDO</div>
+            <h2>PLANO BIMESTRAL</h2>
+            <div class="preco">R$540</div>
+            <ul>
+                <li>Treino e Dieta</li>
+                <li>Acompanhamento diário</li>
+            </ul>
+            <a href="https://wa.me/55SEUNUMERO" class="btn">Contratar</a>
+        </div>
+        <div class="card">
+            <div class="tag">FOCO TOTAL</div>
+            <h2>PLANO TRIMESTRAL</h2>
+            <div class="preco">R$780</div>
+            <ul>
+                <li>Treino e Dieta</li>
+                <li>Check-ins semanais</li>
+            </ul>
+            <a href="https://wa.me/55SEUNUMERO" class="btn">Contratar</a>
+        </div>
+    </div>
+</body>
+</html>
