@@ -4,58 +4,229 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raphael Dinalli | Treinador</title>
+
     <style>
-        :root { --vermelho: #e31b23; --preto: #0a0a0a; }
-        body { font-family: sans-serif; background-color: var(--preto); color: white; margin: 0; text-align: center; }
-        .header { padding: 50px 20px; }
-        .logo { max-width: 150px; margin-bottom: 15px; }
-        .planos-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px; }
-        .card { background: white; color: #1a1a1a; border-radius: 12px; width: 280px; padding: 25px; text-align: left; }
-        .tag { background: var(--vermelho); color: white; font-size: 0.7rem; font-weight: bold; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
-        .preco { color: var(--vermelho); font-size: 2rem; font-weight: bold; margin: 15px 0; }
-        ul { list-style: none; padding: 0; margin-bottom: 25px; min-height: 120px; }
-        ul li { margin-bottom: 10px; font-size: 0.9rem; }
-        ul li::before { content: "✓ "; color: var(--vermelho); font-weight: bold; }
-        .btn { background: var(--vermelho); color: white; text-decoration: none; display: block; text-align: center; padding: 15px; border-radius: 6px; font-weight: bold; text-transform: uppercase; }
+        :root {
+            --vermelho: #e31b23;
+            --preto: #0a0a0a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--preto);
+            color: white;
+            margin: 0;
+            text-align: center;
+        }
+
+        .header {
+            padding: 40px 20px;
+        }
+
+        .logo {
+            max-width: 160px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .sub-titulo {
+            color: var(--vermelho);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .planos-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            color: #1a1a1a;
+            border-radius: 10px;
+            width: 260px;
+            padding: 25px 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(227, 27, 35, 0.2);
+        }
+
+        .melhor-custo {
+            color: #555;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .texto-apoio {
+            color: var(--vermelho);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: -10px;
+            display: block;
+        }
+
+        .valor-mes {
+            color: var(--vermelho);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card h2 {
+            font-size: 0.95rem;
+            color: var(--preto);
+            margin: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+        }
+
+        .preco {
+            color: var(--vermelho);
+            font-size: 2.1rem;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+            line-height: 1.3;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        ul li::before {
+            content: "✓ ";
+            color: var(--vermelho);
+            font-weight: bold;
+        }
+
+        .btn {
+            background: var(--vermelho);
+            color: white;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
+
 <body>
+
     <div class="header">
-        <img src="logo.png" alt="Logo" class="logo">
+        <img src="logo.png" alt="Raphael Dinalli" class="logo">
         <h1>RAPHAEL DINALLI</h1>
-        <p style="color: var(--vermelho)">TREINADOR ONLINE</p>
+        <div class="sub-titulo">TREINADOR ONLINE</div>
     </div>
+
     <div class="planos-wrapper">
+
         <div class="card">
-            <div class="tag">MENSAL</div>
-            <h2>PLANO MENSAL</h2>
-            <div class="preco">R$290</div>
+            <h2>PLANO MENSAL – TREINO</h2>
+            <div class="preco">R$ 200,00</div>
             <ul>
-                <li>Treino e Dieta</li>
-                <li>Suporte WhatsApp</li>
+                <li>PROTOCOLO INDIVIDUALIZADO DE TREINO</li>
+                <li>PLANILHA PARA REGISTRO E CONTROLE DAS CARGAS</li>
+                <li>ACOMPANHAMENTO DIÁRIO (SEG A SAB)</li>
+                <li>ATUALIZAÇÃO DO PROTOCOLO A CADA 8 SEMANAS</li>
+                <li>FEEDBACKS QUINZENAIS OU MENSAIS</li>
             </ul>
-            <a href="https://wa.me/55SEUNUMERO" class="btn">Contratar</a>
+            <a href="#" target="_blank" class="btn">Contratar Agora</a>
         </div>
+
         <div class="card">
-            <div class="tag">MAIS VENDIDO</div>
-            <h2>PLANO BIMESTRAL</h2>
-            <div class="preco">R$540</div>
+            <span class="texto-apoio">2 meses por apenas:</span>
+            <h2>PLANO BIMESTRAL – TREINO</h2>
+            <div class="preco">R$ 370,00</div>
+            <span class="valor-mes">ou R$ 185,00/mês</span>
             <ul>
-                <li>Treino e Dieta</li>
-                <li>Acompanhamento diário</li>
+                <li>PROTOCOLO INDIVIDUALIZADO DE TREINO</li>
+                <li>PLANILHA PARA REGISTRO E CONTROLE DAS CARGAS</li>
+                <li>ACOMPANHAMENTO DIÁRIO (SEG A SAB)</li>
+                <li>ATUALIZAÇÃO DO PROTOCOLO A CADA 8 SEMANAS</li>
+                <li>FEEDBACKS QUINZENAIS OU MENSAIS</li>
             </ul>
-            <a href="https://wa.me/55SEUNUMERO" class="btn">Contratar</a>
+            <a href="#" target="_blank" class="btn">Contratar Agora</a>
         </div>
+
         <div class="card">
-            <div class="tag">FOCO TOTAL</div>
-            <h2>PLANO TRIMESTRAL</h2>
-            <div class="preco">R$780</div>
+            <span class="texto-apoio">3 meses por apenas:</span>
+            <h2>PLANO TRIMESTRAL – TREINO</h2>
+            <div class="preco">R$ 525,00</div>
+            <span class="valor-mes">ou R$ 175,00/mês</span>
             <ul>
-                <li>Treino e Dieta</li>
-                <li>Check-ins semanais</li>
+                <li>PROTOCOLO INDIVIDUALIZADO DE TREINO</li>
+                <li>PLANILHA PARA REGISTRO E CONTROLE DAS CARGAS</li>
+                <li>ACOMPANHAMENTO DIÁRIO (SEG A SAB)</li>
+                <li>ATUALIZAÇÃO DO PROTOCOLO A CADA 8 SEMANAS</li>
+                <li>FEEDBACKS QUINZENAIS OU MENSAIS</li>
             </ul>
-            <a href="https://wa.me/55SEUNUMERO" class="btn">Contratar</a>
+            <a href="#" target="_blank" class="btn">Contratar Agora</a>
         </div>
+
+        <div class="card">
+            <span class="melhor-custo">Melhor Custo-Benefício</span>
+            <span class="texto-apoio">4 meses por apenas:</span>
+            <h2>PLANO QUADRIMESTRAL – TREINO</h2>
+            <div class="preco">R$ 660,00</div>
+            <span class="valor-mes">ou R$ 165,00/mês</span>
+            <ul>
+                <li>PROTOCOLO INDIVIDUALIZADO DE TREINO</li>
+                <li>PLANILHA PARA REGISTRO E CONTROLE DAS CARGAS</li>
+                <li>ACOMPANHAMENTO DIÁRIO (SEG A SAB)</li>
+                <li>ATUALIZAÇÃO DO PROTOCOLO A CADA 8 SEMANAS</li>
+                <li>FEEDBACKS QUINZENAIS OU MENSAIS</li>
+            </ul>
+            <a href="#" target="_blank" class="btn">Contratar Agora</a>
+        </div>
+
     </div>
+
 </body>
 </html>
