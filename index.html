@@ -46,14 +46,16 @@
         }
 
         .logo {
-            max-width: 250px; /* Aumentei o tamanho da logo conforme pedido */
+            /* Aumentado consideravelmente para compensar o espaço vazio dentro da própria imagem */
+            max-width: 500px; 
+            width: 100%;
             height: auto;
         }
 
         /* --- ABAS DE NAVEGAÇÃO --- */
         .tabs-container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1250px;
             display: flex;
             justify-content: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -89,14 +91,13 @@
             background-color: var(--vermelho);
         }
 
-        /* --- CARDS DE PREÇO --- */
+        /* --- CARDS DE PREÇO (Alterado para Grid) --- */
         .planos-wrapper {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Força 4 colunas lado a lado no desktop */
             gap: 20px;
-            flex-wrap: wrap;
             padding: 0 20px 60px;
-            max-width: 1200px;
+            max-width: 1250px;
             width: 100%;
         }
 
@@ -104,8 +105,8 @@
             background: white;
             color: var(--cinza-escuro);
             border-radius: 12px;
-            width: 280px;
-            padding: 30px 25px;
+            width: 100%;
+            padding: 30px 20px;
             text-align: left;
             display: flex;
             flex-direction: column;
@@ -120,7 +121,7 @@
 
         /* Textos de apoio superiores */
         .top-tags {
-            min-height: 35px; /* Mantém a altura mesmo que não tenha tag para alinhar os títulos */
+            min-height: 35px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -156,7 +157,7 @@
 
         .preco-container {
             margin-bottom: 25px;
-            min-height: 85px; /* Garante alinhamento com a adição do texto de apoio */
+            min-height: 85px;
         }
 
         .preco {
@@ -182,12 +183,12 @@
             margin: 0 0 25px 0;
             border-top: 1px solid #eaeaea;
             padding-top: 20px;
-            flex-grow: 1; /* Faz a lista crescer e empurrar o botão pro fundo */
+            flex-grow: 1;
         }
 
         ul li {
             margin-bottom: 12px;
-            font-size: 0.8rem;
+            font-size: 0.75rem; /* Levemente reduzido para caber melhor na grade */
             line-height: 1.4;
             font-weight: 600;
             color: var(--texto-card);
@@ -200,7 +201,7 @@
             color: var(--vermelho);
             font-weight: 900;
             font-size: 1rem;
-            margin-right: 10px;
+            margin-right: 8px;
             line-height: 1.1;
         }
 
@@ -211,37 +212,62 @@
             text-decoration: none;
             display: block;
             text-align: center;
-            padding: 16px;
+            padding: 16px 10px;
             border-radius: 6px;
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: background 0.3s ease;
-            margin-top: auto; /* Força o botão a ir para o final do card */
+            margin-top: auto;
         }
 
         .btn:hover {
-            background: #b8151c; /* Vermelho mais escuro no hover */
+            background: #b8151c;
         }
 
         /* --- RESPONSIVIDADE --- */
-        @media (max-width: 900px) {
+        
+        /* Tablets e Telas Menores (Até 1024px) */
+        @media (max-width: 1024px) {
             .planos-wrapper {
-                gap: 20px;
+                grid-template-columns: repeat(2, 1fr); /* 2 em cima, 2 embaixo */
+                max-width: 700px; /* Mantém eles não tão esticados */
             }
         }
 
+        /* Celulares (Até 650px) */
         @media (max-width: 650px) {
-            .card {
-                width: 100%;
-                max-width: 340px;
+            .logo {
+                max-width: 350px;
             }
             .header {
                 padding: 40px 20px 20px;
             }
-            .logo {
-                max-width: 200px;
+            .planos-wrapper {
+                grid-template-columns: repeat(2, 1fr); /* Garante os 2x2 no celular como pedido */
+                gap: 12px;
+                padding: 0 12px 40px;
+            }
+            .card {
+                padding: 20px 15px;
+            }
+            .card h2 {
+                font-size: 0.9rem; /* Título menor para caber na tela dividida */
+            }
+            .preco {
+                font-size: 1.6rem; /* Preço menor */
+            }
+            .texto-apoio, .valor-mes {
+                font-size: 0.7rem;
+            }
+            ul li {
+                font-size: 0.65rem; /* Texto menor para evitar quebras ruins */
+                margin-bottom: 10px;
+            }
+            .btn {
+                padding: 12px 5px;
+                font-size: 0.75rem;
             }
         }
     </style>
