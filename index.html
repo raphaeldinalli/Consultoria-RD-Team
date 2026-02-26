@@ -53,6 +53,17 @@
             height: auto;
         }
 
+        .sub-titulo-header {
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: -10px; /* Ajuste fino dependendo do espaço em branco da sua imagem */
+            opacity: 0.7;
+            text-align: center;
+        }
+
         /* --- ABAS DE NAVEGAÇÃO --- */
         .tabs-container {
             width: 100%;
@@ -61,6 +72,7 @@
             justify-content: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
+            margin-top: 20px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -248,6 +260,11 @@
             .header {
                 padding: 40px 20px 20px;
             }
+            .sub-titulo-header {
+                font-size: 0.75rem;
+                letter-spacing: 3px;
+                margin-top: -5px;
+            }
             .planos-wrapper {
                 grid-template-columns: repeat(2, 1fr); /* Garante os 2x2 no celular */
                 gap: 12px;
@@ -282,6 +299,7 @@
     <!-- CABEÇALHO -->
     <header class="header">
         <img src="logo.png" alt="Raphael Dinalli Treinador" class="logo">
+        <div class="sub-titulo-header">Consultoria Online</div>
     </header>
 
     <!-- ABAS -->
