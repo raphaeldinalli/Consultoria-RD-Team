@@ -13,7 +13,7 @@
     <style>
         :root {
             --vermelho: #e31b23;
-            --preto: #0a0a0a;
+            --preto: #000000;
             --cinza-escuro: #1a1a1a;
             --cinza-claro: #f4f4f4;
             --texto-card: #333333;
@@ -29,6 +29,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden; /* Evita rolagem lateral */
         }
 
         * {
@@ -60,6 +61,8 @@
             justify-content: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .tab {
@@ -91,7 +94,7 @@
             background-color: var(--vermelho);
         }
 
-        /* --- CARDS DE PREÇO (Alterado para Grid) --- */
+        /* --- CARDS DE PREÇO (Grade Forçada) --- */
         .planos-wrapper {
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* Força 4 colunas lado a lado no desktop */
@@ -99,6 +102,7 @@
             padding: 0 20px 60px;
             max-width: 1250px;
             width: 100%;
+            margin: 0 auto; /* Garante que fique no centro */
         }
 
         .card {
@@ -188,7 +192,7 @@
 
         ul li {
             margin-bottom: 12px;
-            font-size: 0.75rem; /* Levemente reduzido para caber melhor na grade */
+            font-size: 0.75rem;
             line-height: 1.4;
             font-weight: 600;
             color: var(--texto-card);
@@ -228,11 +232,11 @@
 
         /* --- RESPONSIVIDADE --- */
         
-        /* Tablets e Telas Menores (Até 1024px) */
-        @media (max-width: 1024px) {
+        /* Laptops e Tablets (Até 1100px - Margem de segurança maior) */
+        @media (max-width: 1100px) {
             .planos-wrapper {
-                grid-template-columns: repeat(2, 1fr); /* 2 em cima, 2 embaixo */
-                max-width: 700px; /* Mantém eles não tão esticados */
+                grid-template-columns: repeat(2, 1fr); /* Muda para 2 em cima, 2 embaixo */
+                max-width: 750px; /* Mantém os cartões agrupados bonitos no centro */
             }
         }
 
@@ -245,7 +249,7 @@
                 padding: 40px 20px 20px;
             }
             .planos-wrapper {
-                grid-template-columns: repeat(2, 1fr); /* Garante os 2x2 no celular como pedido */
+                grid-template-columns: repeat(2, 1fr); /* Garante os 2x2 no celular */
                 gap: 12px;
                 padding: 0 12px 40px;
             }
@@ -253,16 +257,16 @@
                 padding: 20px 15px;
             }
             .card h2 {
-                font-size: 0.9rem; /* Título menor para caber na tela dividida */
+                font-size: 0.9rem;
             }
             .preco {
-                font-size: 1.6rem; /* Preço menor */
+                font-size: 1.6rem;
             }
             .texto-apoio, .valor-mes {
                 font-size: 0.7rem;
             }
             ul li {
-                font-size: 0.65rem; /* Texto menor para evitar quebras ruins */
+                font-size: 0.65rem;
                 margin-bottom: 10px;
             }
             .btn {
